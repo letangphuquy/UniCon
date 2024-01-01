@@ -24,11 +24,14 @@ const handler = NextAuth({
                 const findResult = await User.findOne({ email: profile.email})
                 // create new
                 if (findResult == null) {
+                    if (!profile.email_verified) {
+                        throw new Error("Un-verified email account is invalid");
+                    }
                     await User.create({
                         email: profile.email,
                         username: profile.name.replaceAll(" ", "").toLowerCase(),
                         image: profile.image,
-                        about: profile.sub,
+                        about: `Call me by ${profile.given_name}, my family name is ${profile.family_name}`,
                         institution: "none",
                         is_boss: false
                     })

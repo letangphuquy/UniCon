@@ -1,3 +1,4 @@
+import { REGEX } from "@/CONST";
 import { Schema, model, models } from "mongoose";
 const UserSchema = new Schema({
     email: {
@@ -8,7 +9,7 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: [true, 'Username is required!'],
-        match: [/^(?=.{6,30}$)(?![_.])(?!.*[_.]{2})[\p{L}\p{Mn}\p{Pd}a-zA-Z0-9._]+(?<![_.])$/u, "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"]
+        match: [REGEX, "Username invalid, it should contain 8-20 alphanumeric letters and be unique!"]
     },
     about: {
         type: String
