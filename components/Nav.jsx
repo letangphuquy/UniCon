@@ -85,7 +85,7 @@ const Nav = () => {
           {
             session?.user
               ? dropdownAvatar()
-              : Object.values(providers).map(provider => {
+              : providers && Object.values(providers).map(provider => {
                 return (
                   <button className="black_btn flex gap-2"
                     type="button"

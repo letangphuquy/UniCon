@@ -21,11 +21,11 @@ io.on('connection', socket => {
     socket.on('join-room', (roomId, userId) => {
         console.log(roomId, userId)
         socket.join(roomId)
-        // io.to(roomId).emit('user-connected', userId)
-        socket.to(roomId).emit('user-connected', userId)
+        io.to(roomId).emit('user-connected', userId)
+        // socket.to(roomId).emit('user-connected', userId)
         socket.on('disconnect', () => {
-            socket.to(roomId).emit("user-disconnected", userId)
-            // io.to(roomId).emit("user-disconnected", userId)
+            // socket.to(roomId).emit("user-disconnected", userId)
+            io.to(roomId).emit("user-disconnected", userId)
         })
     })
 })
