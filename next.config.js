@@ -13,7 +13,8 @@ const nextConfig = {
             topLevelAwait: true
         }
         return config
-    }
+    },
+    // reactStrictMode: false
 }
 
 module.exports = nextConfig

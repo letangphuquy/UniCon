@@ -143,6 +143,10 @@
 }
 
 /* Form Component */
+.form {
+  @apply mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism
+}
+
 .form_textarea {
   @apply w-full flex rounded-lg h-12 min-h-[3rem] max-h-[160px] mt-2 p-3 text-sm text-gray-500 outline-0;
 }

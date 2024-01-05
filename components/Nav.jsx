@@ -62,8 +62,8 @@ const Nav = () => {
         <Image
           src="/assets/logo.svg"
           alt="Logo"
-          width={30}
-          height={30}
+          width={45}
+          height={45}
           className="object-contain"
         />
         <p className="logo_text">
@@ -73,7 +73,7 @@ const Nav = () => {
       <div className="flex gap-2 sm:gap-6">
         {session?.user &&
           <>
-            <Link className="orange_btn" href="/group">
+            <Link className="black_btn" href="/group">
               Groups
             </Link>
             <Link className="orange_btn" href="/meet">

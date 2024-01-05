@@ -11,7 +11,7 @@ const Form = ({ title, desc, user, setUser, handleSubmit, readonly, setReadonly}
       <p className="desc text-left max-w-md"> {desc} </p>
       <form
         onSubmit={handleSubmit}
-        className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
+        className="form"
         >
         <FormElement
           label="Username"

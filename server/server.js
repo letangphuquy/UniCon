@@ -12,13 +12,14 @@ const io = Server(server, {
 
 io.on("connection", (socket) => {
   console.log(`socket ${socket.id} connected`);
-
+    let counter = 0;
   // send an event to the client
   socket.emit("foo", "bar");
-
+  
   socket.on("foobar", (msg) => {
-    // an event was received from the client
-    console.log(`Client ${socket.id} interacted back: ${msg}`)
+      // an event was received from the client
+      console.log(`Client ${socket.id} interacted back: ${msg}`)
+      socket.emit("foo", ++counter);
   });
 
   // upon disconnection
@@ -27,5 +28,5 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen(3001); // APP is running on 3000 so WS server must runs on 3001
+io.listen(3333); // APP is running on 3000 so WS server must runs on 3001
 

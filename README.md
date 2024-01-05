@@ -4,6 +4,11 @@ Speed-run thesis.
 
 More features coming soon
 
+## How to Run?
+`npm run server` (on port 3333) (for Socket.io)
+`npm run dev` (for client)
+`peerjs --port 3002`
+
 ## Template
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
